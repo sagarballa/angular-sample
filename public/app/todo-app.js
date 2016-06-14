@@ -11,6 +11,13 @@
 			controller: 'TodoListCtrl',
 			controllerAs : 'todolistCtrl'
 		}); 
+		
+		$routeProvider.when('/addtodo', {
+			templateUrl: 'app/addtodo/todo.html',
+			controller: 'AddTodoCtrl',
+			controllerAs : 'todoCtrl'
+		}); 
+		
 		$routeProvider.otherwise({
 			redirectTo: '/todolist'
 		});

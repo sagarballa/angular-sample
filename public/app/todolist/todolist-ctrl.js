@@ -3,11 +3,15 @@
 	
 	angular.module('TodoApp').controller('TodoListCtrl', todoListCtrl);
 	
-	todoListCtrl.$inject = ['TodoDataService'];
-	function todoListCtrl(TodoDataService){
+	todoListCtrl.$inject = ['TodoDataService', '$location'];
+	function todoListCtrl(TodoDataService, $location){
 		var vm = this;
 		vm.todolist = TodoDataService.todolist;
+		vm.add = add;
 		
-		console.log("Test");
+		function add(){
+			$location.path('/addTodo');
+		}
+		
 	};
 })();
