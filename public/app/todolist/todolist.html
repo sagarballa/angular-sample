@@ -1,0 +1,25 @@
+<div class="h3 page-header">Todo List</div>
+
+<table class="table" ng-if="todoListCtrl.todolist">
+	<thead>
+		<tr>
+			<th>Id</th>
+			<th>Name</th>
+			<th>Date</th>
+			<th>Status</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="item in todoListCtrl.todolist">
+			<td>{{item.id}}</td>
+			<td>{{item.name}}</td>
+			<td>{{item.date}}</td>
+			<td>{{item.status}}</td>
+			<td><a href="#" ng-click="edit(item)" class="glyphicon glyphicon-edit"></a></td>
+			<td><a href="#" ng-click="delete(item)" class="glyphicon glyphicon-remove"></a></td>
+		</tr>
+	</tbody>
+</table>
+
+<div class="label-warning" ng-if="!todoListCtrl.todolist">No Todos</div>
+
