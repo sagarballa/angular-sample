@@ -1,0 +1,17 @@
+<div class="h3 page-header">Todo</div>
+<form name="todoForm" angular-validator-submit="todoCtrl.submit()" class="form-horizontal" novalidate angular-validator>
+	<div class="row form-group" id="name-group">
+		<label class="col-md-5 col-md-pull-1 text-right control-label" for="todoname">Name:</label>
+		<div class="col-md-6">
+			<input type="text" name="todoname" id="todoname" class="form-control" ng-model="todoCtrl.todo.name" required-message = "'Name is required'" required>
+		</div>
+	</div>
+	<div class="row form-group" id="date-group">
+		<label class="col-md-5 col-md-pull-1 text-right control-label" for="date">Name:</label>
+		<div class="col-md-6">
+			<input type="text" name="date" id="date" class="form-control" ng-model="todoCtrl.todo.date" required-message = "'Date is required'" invalid-message="'Date should be in DDMMYY format'" required>
+		</div>
+	</div>
+	<button type="submit" class="btn btn-primary">Submit</button>
+	<button type="button" ng-click="todoCtrl.cancel()" class="btn btn-default">Cancel</button>
+</form>

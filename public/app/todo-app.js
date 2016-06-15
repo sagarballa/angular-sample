@@ -1,7 +1,7 @@
 (function(){
 	'use strict';
 	
-	angular.module('TodoApp', ['ngRoute', 'ui.bootstrap']);
+	angular.module('TodoApp', ['ngRoute', 'ui.bootstrap', 'angularValidator']);
 	
 	angular.module('TodoApp').config(routeConfig);
 	
@@ -13,9 +13,9 @@
 		}); 
 		
 		$routeProvider.when('/addtodo', {
-			templateUrl: 'app/addtodo/todo.html',
+			templateUrl: 'app/todo/todo.html',
 			controller: 'AddTodoCtrl',
-			controllerAs : 'todoCtrl'
+			controllerAs : 'todoCtrl' 
 		}); 
 		
 		$routeProvider.otherwise({

@@ -7,10 +7,13 @@
 	function addTodoCtrl(TodoDataService, $location){
 		var vm = this;
 		vm.todo = {};
-		vm.add = add;
+		vm.submit = add;
 		
 		function add(){
-			$location.path('/addTodo');
+			
+			TodoDataService.addTodo(this.todo);
+			
+			$location.path('/todolist');
 		}
 		
 	};

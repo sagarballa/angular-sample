@@ -10,7 +10,7 @@
 		vm.add = add;
 		
 		function add(){
-			$location.path('/addTodo');
+			$location.path('/addtodo');
 		}
 		
 	};
