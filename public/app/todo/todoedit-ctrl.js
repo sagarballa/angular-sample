@@ -3,9 +3,9 @@
 	
 	angular.module('TodoApp').controller('EditTodoCtrl', editTodoCtrl);
 	
-	editTodoCtrl.$inject = ['TodoDataService', '$location', '$routeParams'];
+	editTodoCtrl.$inject = ['TodoDataService', '$location', '$stateParams'];
 	
-	function editTodoCtrl(TodoDataService, $location, $routeParams){
+	function editTodoCtrl(TodoDataService, $location, $stateParams){
 		var vm = this;
 		vm.todo = getTodo();
 		vm.update = update;
@@ -22,7 +22,7 @@
 		}
 		
 		function getTodo() {
-			var id = $routeParams.id;
+			var id = $stateParams.id;
 			var todo = TodoDataService.getTodo(id);
 			return todo;
 		}
