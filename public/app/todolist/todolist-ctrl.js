@@ -8,10 +8,14 @@
 		var vm = this;
 		vm.todolist = TodoDataService.todolist;
 		vm.add = add;
+		vm.edit = edit;
 		
 		function add(){
 			$location.path('/addtodo');
 		}
 		
-	};
+		function edit(todo) {
+			$location.path('/edittodo/' + todo.id);
+		}
+	}
 })();

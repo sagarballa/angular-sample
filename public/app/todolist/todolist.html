@@ -1,6 +1,6 @@
 <div class="h3 page-header">Todo List</div>
 
-<table class="table" ng-if="todolistCtrl.todolist.length !== 0">
+<table class="table" ng-if="listCtrl.todolist.length !== 0">
 	<thead>
 		<tr>
 			<th>Id</th>
@@ -10,18 +10,18 @@
 		</tr>
 	</thead>
 	<tbody>
-		<tr ng-repeat="item in todolistCtrl.todolist">
+		<tr ng-repeat="item in listCtrl.todolist">
 			<td>{{item.id}}</td>
 			<td>{{item.name}}</td>
 			<td>{{item.date}}</td>
 			<td>{{item.status}}</td>
-			<td><a href="#" ng-click="todolistCtrl.edit(item)" class="glyphicon glyphicon-edit"></a></td>
-			<td><a href="#" ng-click="todolistCtrl.delete(item)" class="glyphicon glyphicon-remove"></a></td>
+			<td><button ng-click="listCtrl.edit(item)" class="glyphicon glyphicon-edit"></button></td>
+			<td><button ng-click="listCtrl.delete(item)" class="glyphicon glyphicon-remove"></button></td>
 		</tr>
 	</tbody>
 </table>
 
-<div class="alert alert-danger" ng-if="todolistCtrl.todolist.length === 0">No Todos</div>
+<div class="alert alert-danger" ng-if="listCtrl.todolist.length === 0">No Todos</div>
 
-<button class="btn btn-primary" ng-click="todolistCtrl.add()">Add a Todo <span class="glyphicon glyphicon-plus"></span></button>
+<button class="btn btn-primary" ng-click="listCtrl.add()">Add a Todo <span class="glyphicon glyphicon-plus"></span></button>
 
